@@ -1,0 +1,111 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Authors
+# @name Authors_GET
+GET {{server}}/cat/Authors
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_POST
+POST {{server}}/cat/Authors
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "92752770-5af1-4b44-82e1-9340d4821573",
+  "name": "name-9275277",
+  "dateOfBirth": "2001-06-30",
+  "dateOfDeath": "2002-07-05"
+}
+
+
+### Authors
+# @name Authors_PATCH
+PATCH {{server}}/cat/Authors/92752770-5af1-4b44-82e1-9340d4821573
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "92752770-5af1-4b44-82e1-9340d4821573",
+  "name": "name-9275277",
+  "dateOfBirth": "2001-06-30",
+  "dateOfDeath": "2002-07-05"
+}
+
+
+### Authors
+# @name Authors_DELETE
+DELETE {{server}}/cat/Authors/92752770-5af1-4b44-82e1-9340d4821573
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Books
+# @name Books_GET
+GET {{server}}/cat/Books
+Authorization: Basic {{username}}:{{password}}
+
+
+### Books
+# @name Books_POST
+POST {{server}}/cat/Books
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "77227677-542a-458a-aace-05ddf524a847",
+  "title": "title-7722767",
+  "writer": "writer-7722767",
+  "publCountry": "767",
+  "isHardcover": false,
+  "amount": 12.92,
+  "currency": "767",
+  "stock": 67,
+  "author": {
+    "ID": "92752770-5af1-4b44-82e1-9340d4821573"
+  }
+}
+
+
+### Books
+# @name Books_PATCH
+PATCH {{server}}/cat/Books/77227677-542a-458a-aace-05ddf524a847
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "77227677-542a-458a-aace-05ddf524a847",
+  "title": "title-7722767",
+  "writer": "writer-7722767",
+  "publCountry": "767",
+  "isHardcover": false,
+  "amount": 12.92,
+  "currency": "767",
+  "stock": 67,
+  "author": {
+    "ID": "92752770-5af1-4b44-82e1-9340d4821573"
+  }
+}
+
+
+### Books
+# @name Books_DELETE
+DELETE {{server}}/cat/Books/77227677-542a-458a-aace-05ddf524a847
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### submitOrder
+# @name submitOrder_POST
+POST {{server}}/cat/submitOrder
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "book": "a1911faf-074e-4ef8-b7aa-5adf0347d5b2",
+  "quantity": 40
+}

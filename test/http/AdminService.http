@@ -1,0 +1,141 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Books
+# @name Books_GET
+GET {{server}}/admin/Books
+Authorization: Basic {{username}}:{{password}}
+
+
+### Books
+# @name Books_POST
+POST {{server}}/admin/Books
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "3825936b-4b03-4a4e-9efb-4bb79050b31f",
+  "title": "Demo",
+  "author": {
+    "ID": "ffdd2d3e-6604-427d-aca8-c08edafb0c71"
+  },
+  "genre": 1,
+  "publCountry": "IND",
+  "stock": 92,
+  "price_amount": 1.19,
+  "price_currency": "EUR",
+  "isHardcover": true,
+  "createdAt": "2019-06-21T00:00:00.000Z",
+  "createdBy": "createdBy.2a040@example.net",
+  "modifiedAt": "2015-09-14T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.2a040@example.org"
+}
+
+
+### Books
+# @name Books_PATCH
+PATCH {{server}}/admin/Books/3825936b-4b03-4a4e-9efb-4bb79050b31f
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "3825936b-4b03-4a4e-9efb-4bb79050b31f",
+  "title": "title-3825936",
+  "author": {
+    "ID": "19042343-6d4c-4dba-9ef7-bc9b3e351073"
+  },
+  "genre": 2,
+  "publCountry": {
+    "code": "220"
+  },
+  "stock": 92,
+  "price": {
+    "amount": 1.19,
+    "currency": "936"
+  },
+  "isHardcover": true,
+  "createdAt": "2019-06-21T00:00:00.000Z",
+  "createdBy": "createdBy.2a040@example.net",
+  "modifiedAt": "2015-09-14T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.2a040@example.org"
+}
+
+
+### Books
+# @name Books_DELETE
+DELETE {{server}}/admin/Books/3825936b-4b03-4a4e-9efb-4bb79050b31f
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_GET
+GET {{server}}/admin/Authors
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_POST
+POST {{server}}/admin/Authors
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "19042343-6d4c-4dba-9ef7-bc9b3e351073",
+  "name": "name-19042343",
+  "dateOfBirth": "2020-05-08",
+  "dateOfDeath": "2013-01-22",
+  "createdAt": "2011-12-04T00:00:00.000Z",
+  "createdBy": "createdBy.bc55z@example.org",
+  "modifiedAt": "2005-08-09T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.bc55z@example.net"
+}
+
+
+
+
+### Authors
+# @name Authors_PATCH
+PATCH {{server}}/admin/Authors/19042343-6d4c-4dba-9ef7-bc9b3e351073
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "19042343-6d4c-4dba-9ef7-bc9b3e351073",
+  "name": "name-19042343",
+  "dateOfBirth": "2002-05-08",
+  "dateOfDeath": "2013-01-22",
+  "createdAt": "2011-12-04T00:00:00.000Z",
+  "createdBy": "createdBy.bc55z@example.org",
+  "modifiedAt": "2005-08-09T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.bc55z@example.net"
+}
+
+
+### Authors
+# @name Authors_DELETE
+DELETE {{server}}/admin/Authors/19042343-6d4c-4dba-9ef7-bc9b3e351073
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Countries
+# @name Countries_GET
+GET {{server}}/admin/Countries
+Authorization: Basic {{username}}:{{password}}
+
+### Books
+# @name Books_POST
+POST {{server}}/admin/Books
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+
+  "author_ID":  "ffdd2d3e-6604-427d-aca8-c08edafb0c71"
+  
+
+}
+
